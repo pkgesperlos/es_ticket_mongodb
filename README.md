@@ -6,14 +6,22 @@ composer require esperlos98/esticket
 ```
 ### you adding to User model relation
 ```
+use Esperlos98\EsTicket\Models\Ticket;
+......
 public function tickets(){
 	return $this->hasMany(Ticket::class,"user_id");
 }
 ``` 
+<div style="text-align:center;"> <img src="./docs/img/scr.png"> </img> </div>
 
 # Note 
 > you need to createing to role with a ticket name and assign user to these role  for ticket management  
 
+# image
+## for upload images 
+```
+php artisan storage:link
+```
 
 # Routing
 
@@ -27,7 +35,7 @@ Note: image not mandatory
 ## replie to a ticket
 ```
 Method : POST
-URl: your_url/es/api/v1/ticket/{you must to add ticket id here} 
+URl: your_url/es/api/v1/ticket/replies/{you must to add ticket id here} 
 Example: your_url/es/api/v1/ticket/replies/62d3dce7384875c0fd0462ef
 Parameters: title,message,image 
 Note: image not mandatory
